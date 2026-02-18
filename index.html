@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Web Saya</title>
@@ -8,7 +12,7 @@
     <style>
         body {
             background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             margin: 40px;
         }
@@ -83,6 +87,7 @@
             align-items: center;
             padding: 10px 50px;
             margin: -40px -40px 40px 40px;
+            gap: 10px;
         }
 
         .logo {
@@ -135,20 +140,132 @@
             height: 120px;
         }
     }
+        .dark-theme {
+            background-color: #1a1a1a;
+            color: white;
+        }
+        .dark-theme section {
+            background-color: #2d2d2d;
+            color: white;
+        }
+
+        #dark-mode-toggle {
+            background-color: #0b2d8b;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            transition: 0.3s;
+        }
+
+        #dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .dark-theme .nav-links a {
+            color: #ecf0f1
+        }
+
+        .skill-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0,05);
+            border-top: 5px solid #3498db;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .dark-theme .skill-card {
+            background-color: #2d2d2d;
+            color: white;
+            border-top: 5px solid #f1c40f;
+        }
+
+        .contact-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-contact {
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .whatsapp {
+            background-color: #25d366;
+        }
+
+        .email {
+            background-color: #e74c3c;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0,0.2);
+            filter: brightness(1.1);
+        }
+
+        .dark-theme .contact-section {
+            color: white ;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .instagram:hover {
+            filter: brightness(1.2);
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">MyPortfolio</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Tentang</a></li>
-                <li><a href="#">Proyek</a></li>
-                <li><a href="#">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+
+        <button id="dark-mode-toggle">Ubah Tema</button>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Proyek</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
 
     <hr>
 
@@ -164,21 +281,43 @@
         </section>
 
         <section class="container">
-            <div>
-                <h2>Skill yang Sedang Dipelajari</h2>
-                <ul>
-                    <li>Instalasi VS CODE & Live Server (Selesai)</li>
-                    <li>Struktur Dasar HTML</li>
-                    <li>Membuat Link dan Gambar</li>
-                </ul>
-            </div>
+            <h2 style="text-align: center;">Skill yang sedang Dipelajari</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Tools</h3>
+                    <p>VS Code & Live Server</p>
+                </div>
 
-            <div>
-                <h2>Skill CSS</h2>
-                <ul>
-                    <li>Warna & Font</li>
-                    <li>Flexbox Layout</li>
-                </ul>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML5</h3>
+                    <p>Struktur Dasar, Link, & Gambar</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS3</h3>
+                    <p>Flexbox, Grid, & Dark Mode</p>
+                </div>
+            </div>
+        </section>
+        <section class="container contact-section">
+            <h2 style="text-align: center;">Tertarik Bekerja Sama?</h2>
+            <p style="text-align: center;">Silahkan hubungi saya melalui salah satu platform di bawah ini:</p>
+
+            <div class="contact-button">
+                <a href="" class="btn-contact whatsapp" target="_blank">
+                    Chat via WhatsApp
+                </a>
+
+                <a href="mailto:rmdhn488@gmail.com" class="btn-contact email">
+                    Kirim Email
+                </a>
+
+                <a href="https://www.instagram.com/jayyy_jo0" class="btn-contact instagram" target="_blank">
+                    Follow Instagram
+                </a>
             </div>
         </section>
     </main>
@@ -191,5 +330,17 @@
             <a href="#">Instagram</a> | <a href="#">GitHub</a>
         </div>
     </footer>
+    <script>
+        const btn = document.getElementById('dark-mode-toggle');
+        btn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+
+            if (document.body.classList.contains('dark-theme')) {
+                btn.innerText = "☀️ Mode Terang";
+            } else {
+                btn.innerText = "🌙 Mode Gelap"
+            }
+        });
+    </script>
 </body>
 </html>
