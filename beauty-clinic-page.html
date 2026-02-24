@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Clinic | Pancarkan Kecantikan Alamimu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffafb;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d63384;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d63384;
+        }
+
+        .hero {
+            padding: 100px 10%;
+            text-align: center;
+            background: linear-gradient(rgba(255,250,251,0.8), rgba(255,250,251,0.8)), 
+                        url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #b82a6f;
+            transform: translateY(-3px);
+        }
+
+        .beauty-services {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .beauty-services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2d3436;
+        }
+
+        .service-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+
+        .beauty-card {
+            background: white;
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border: 1px solid #fce4ec;
+        }
+
+        .beauty-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .beauty-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: #d63384;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .appointment {
+            background-color: #fce4ec;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .appointment-form {
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .appointment-form h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .appointment-form p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #777;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafafa;
+        }
+
+        .btn-book {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 18px;
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-book:hover {
+            background-color: #b82a6f;
+        }
+
+        footer {
+            padding: 50px 10%;
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; padding: 20px; }
+            .nav-links { margin-top: 20px; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+            .appointment-form { padding: 30px; }
+            .beauty-services { padding: 60px 5%; }
+        }
+
+        .testimonials {
+            padding: 80px 10%;
+            background-color: #fffafb;
+            text-align: center;
+        }
+
+        .testimonial-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .testi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.1);
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            border-left: 5px solid #d63384;
+            font-style: italic;
+        }
+
+        .user-info {
+            margin-top: 15px;
+            font-style: normal;
+            color: #d63384;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">GLOW<b>CLINIC</b></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#reservasi">Reservasi</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header class="hero" id="home">
+            <h1>Cantik Luar Dalam,<br>Mulai Dari Sini.</h1>
+            <p>Rasakan perawatan kulit terbaik dengan teknologi terkini dan dokter spesialis profesional.</p>
+            <a href="#reservasi" class="btn-main">Konsultasi Gratis</a>
+        </header>
+
+        <section class="beauty-services" id="layanan">
+            <h2>Layanan Unggulan</h2>
+            <div class="service-container">
+                <div class="beauty-card">
+                    <img src="c:\Users\XOXO\Downloads\images (1).jfif" alt="Facial">
+                    <div class="card-content">
+                        <h3>Deep Facial Cleanup</h3>
+                        <p>Wajah glowing dan bersih dari komedo dengan teknik pembersihan mendalam.</p>
+                    </div>
+                </div>
+                <div class="beauty-card">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500" alt="Laser">
+                    <div class="card-content">
+                        <h3>Anti-Aging Laser</h3>
+                        <p>Samarkan kerutan dan tanda penuaan dini hanya dalam beberapa kali terapi.</p>
+                    </div>
+                </div>
+                <div class="beauty-card">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500" alt="Skincare">
+                    <div class="card-content">
+                        <h3>Skin Consultation</h3>
+                        <p>Analisi kulit secara mendalam langsung dengan dokter kulit bersertifikat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment" id="reservasi">
+            <div class="appointment-form">
+                <h2>Buat Janji Temu</h2>
+                <p>Pilih jadwal yang sesuai untuk kunjungan Anda.</p>
+                <form id="whatsappForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Nomor WhatsApp" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Pilih Jenis Perawatan</option>
+                            <option value="facial">Facial Treatment</option>
+                            <option value="laser">Laser Therapy</option>
+                            <option value="Konsultasi">Konsultasi Dokter</option>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <input type="date" required>
+                    </div>
+                    <button type="submit" class="btn-book">Konfirmasi Jadwal</button>
+                </form>
+            </div>
+        </section>
+        <section class="testimonials">
+            <h2>Apa Kata Mereka?</h2>
+            <div class="testimonial-container">
+                <div class="testi-card">
+                    <p>"Awalnya coba-coba facial disini, ternyata hasilnya luar biasa! Wajah jadi jauh lebih bersih dan glowing."</p>
+                    <div class="user-info">
+                        <strong>- Sarah Amanda</strong>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p>"Dokternya ramah banget dan penjelasannya detail. Treatment lasernya gak sakit sama sekali."</p>
+                    <div class="user-info">
+                        <strong>- Rina Kartika</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Glow Clinic Indonesia. All right reserved.</p>
+        <small>Bandung, Jawa Barat</small>
+    </footer>
+    <script>
+        document.getElementById('whatsappForm').addEve'ntListener('submit, function(e {
+            e.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const layanan = document.getElementById('layanan').value;
+
+            const nomorTujuan = "";
+
+            const pesan = "Halo Glow Clinic, saya ingin reservasi:%0A%0A" +
+                          "*Nama:* " + nama + "%0A" +
+                          "*No. HP:* " + whatsapp + "%0A" +
+                          "*Layanan:* " + layanan;
+                        
+            window.open("https://wa.me/" + nomorTujuan + "?text" + pesan, "_blank");
+        })
+    </script>
+</body>
+</html>

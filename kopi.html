@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven | Coffe & Space</title>
+    <style>
+        :root {
+            --primary: #6F4E37;
+            --secondary: #ECB176;
+            --dark: #2D2424;
+            --light: #FED881;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        nav {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .menu-section {
+            padding: 80px 0;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(111, 79, 55, 0.2);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-info {
+            padding: 20px;
+        }
+
+        .item-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .story-section {
+            padding: 100px 0;
+        }
+
+        .story-item {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .story-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .story-image {
+            flex: 1;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .story-item, .story-item.reverse {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+        }
+
+        .main-footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px 0;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--secondary);
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h2 style="color: var(--primary);">BREW HAVEN</h2>
+            <div class="menu">Menu | Lokasi | Tentang</div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Awali Hari <br> Dengan <span style="color: var(--primary)">Rasa.</span></h1>
+                <p>Kopi pilihan dari petani lokal dengan proses sangrai sempurna.</p>
+                <button style="background: var(--primary); color: white; padding: 15px 30px; border: none; border-radius: 5px; margin-top: 20px;">Pesan Sekarang</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/id/431/600/600" alt="Kopi">
+            </div>
+        </section>
+        <section class="menu-section">
+            <div class="menu-header">
+                <h2>Menu Favorit Kami</h2>
+                <p>Pilihan biji kopi terbaik yang diseduh dengan penuh cinta.</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://picsum.photos/id/1060/300/300" alt="Espresso">
+                    <div class="item-info">
+                        <h3>Black Espresso</h3>
+                        <p>Kuat, murni, dan penuh energi.</p>
+                        <span class="price">Rp. 22.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://picsum.photos/id/635/300/300" alt="Latte">
+                    <div class="item-info">
+                        <h3>Creamy Latte</h3>
+                        <p>Sentuhan susu lembut untukmu harimu.</p>
+                        <span class="price">Rp. 28.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://picsum.photos/id/758/300/300" alt="Croissant">
+                    <div class="item-info">
+                        <h3>Butter Croissant</h3>
+                        <p>Teman sempurna untuk secangkir kopi.</p>
+                        <span class="price">Rp. 25.000</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="story-section">
+            <div class="story-item">
+                <div class="story-text">
+                    <h2>Hanya Biji Pilihan</h2>
+                    <p>Kami bekerja sama langsung dengan petani lokal untuk memastikan setiap biji kopi yang sampai ke tangan Anda adalah kualitas terbaik yang dipanen.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://picsum.photos/id/425/500/400" alt="Biji Kopi">
+                </div>
+            </div>
+
+            <div class="story-item reverse">
+                <div class="story-text">
+                    <h2>Ruang Untuk Ide</h2>
+                    <p>Bukan sekedar tempat minum kopi, Brew Haven dirancang untuk menjadi ruang kreatif bagi para pemimpi, pekerja lepas, dan komunitas untuk bertukar ide.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://picsum.photos/id/1059/500/400" alt="Suasana Cafe">
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>BREW HAVEN</h2>
+                <p>Ruang nyaman untuk secangkir cerita dan sejuta inspirasi</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-content">
+                <h4>Hubungi Kami</h4>
+                <p>Jl.Kopi Harapan No.123</p>
+                <p>WhatsApp: +62</p>
+                <p>Email: hello@bewhaven.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brew Haven Coffe. Dibuat oleh Calon Web Developer senah </p>
+        </div>
+    </footer>
+</body>
+</html>
